@@ -1,0 +1,100 @@
+<view>
+  <image class="navBg" mode="widthFix" src="/icons/首页导航栏.jpg"></image>
+<!-- 搜索框开始 -->
+<SearchBar></SearchBar>
+<!-- 搜索框结束 -->
+
+<!-- 轮播图开始 -->
+<view class="index_swiper">
+  <swiper indicator-dots autoplay circular>
+    <!-- <swiper-item
+    wx:for="{{swiperList}}"
+    wx:for-item="swiper"
+    wx:key="id"
+    >
+      <navigator>
+        <image mode="widthFix" src="{{baseUrl+'/image/swiper/'+swiper.swiperPic}}"></image>
+      </navigator>
+    </swiper-item> -->
+    <!-- 以上这种写法是请求写法（index.js），但是具体图片存放在哪里还不清楚，封装Url和params之后请求返回没有数据 -->
+    <swiper-item>
+      <navigator>
+        <image mode="widthFix" src="http://localhost:8080/image/swiper/1.jpg"></image>
+      </navigator>
+    </swiper-item>
+    <swiper-item>
+      <navigator>
+        <image mode="widthFix" src="http://localhost:8080/image/swiper/2.jpg"></image>
+      </navigator>
+    </swiper-item>
+    <swiper-item>
+      <navigator>
+        <image mode="widthFix" src="http://localhost:8080/image/swiper/3.jpg"></image>
+      </navigator>
+    </swiper-item>
+    <!-- 这种写法是映射写法，写死 -->
+</swiper>
+</view>
+<!-- 轮播图结束 -->
+<view class="hotType">
+商城公告
+</view>
+<!-- 滚动区域开始 -->
+<view class="notice_box">
+        <view class="notice">
+          <image src="/icons/gonggao.png"></image>
+        </view>
+
+        <view class="swiper_box">
+          <swiper 
+              vertical="true"
+              autoplay="true" 
+              circular="true"
+              interval="3000"
+              duration='300'
+              easing-function='easeInOutCubic'>
+            <block wx:for='{{msgList}}' wx:key='index'>
+                <swiper-item>
+                  <view class="swiper-item">
+                    <span class="newsp">公告</span>
+                    <text class="notice-title">{{item.title}}</text>
+                  </view>
+                </swiper-item>
+            </block>
+          </swiper>
+        </view> 
+      </view>
+
+  <!-- 滚动区域结束 -->
+<view class="hotType">
+热门商品分类
+</view>
+<!-- bigtype开始 -->
+<view class="index_bigType">
+    <view class="bigTypeRow">
+        <navigator 
+        bindtap="handleTypeJump" 
+        data-index="{{index}}"
+        wx:for="{{bigTypeList_row1}}"
+        wx:for-item="bigType"
+        wx:key="id">
+        <image mode="widthFix" src="{{baseUrl+'/image/bigType/'+bigType.image}}"></image>
+        <!-- 其中/image/bigType是图片映射地址，在后端config中定义 bigType.image是数据库的字段-->
+        </navigator></view></view>
+<!-- bigtype结束 -->
+<!-- 商品热卖推荐 开始 -->
+<view class="index_hotProduct">
+  <view class="product_title"> 热卖推荐 </view>
+  <view class="product_list">
+    <view class="product_detail" wx:for="{{hotProductList}}" wx:for-item="hotProduct" wx:key="id">
+      <navigator url="/pages/product_detail/index?id={{hotProduct.id}}">
+        <image mode="widthFix" src=" {{baseUrl+'/image/product/'+hotProduct.proPic}}"></image>
+        <view class="product_name">{{hotProduct.name}}</view>
+        <view class="product_price"> ¥ {{hotProduct.price}}</view> 
+        <button size="mini" type="warn">立即购买</button>
+      </navigator>
+    </view>
+  </view>
+</view>
+<!-- 商品热卖推荐 结束 -->
+</view>

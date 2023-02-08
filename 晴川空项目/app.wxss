@@ -1,0 +1,18 @@
+/**全局引用iconfont样式**/
+@import "./pages/styles/iconfont.wxss";
+
+/* 全局样式 */
+page,view,text,swiper,swiper-item,image,navigetor{
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+  /* 盒模型 */
+}
+/* 全局变量定义，设置主题颜色，字体大小等 */
+page{
+  /* 主题颜色 */
+  --themeColor:#90CCFE;
+  /* 字体大小rpx自适应 */
+  font-size: 28rpx;
+
+}

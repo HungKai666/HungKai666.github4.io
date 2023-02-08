@@ -1,0 +1,19 @@
+.search_bar{
+height: 90rpx;
+padding: 10rpx;
+background-color:#90CCFE ;
+box-sizing: border-box;
+margin-top: -3px;
+}
+.search_bar navigator{
+height: 100%;
+display: flex;/*伸缩盒子flex布局 */
+justify-content: center;/*文字居中 */
+align-items: center;/*垂直居中*/
+background-color:#fff;
+color:#666;
+border-radius:15rpx;/*圆角*/
+}
+.search_bar navigator icon{
+padding-right: 5rpx;
+}

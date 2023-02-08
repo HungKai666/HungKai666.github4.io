@@ -1,0 +1,25 @@
+<!-- 搜索栏开始 -->
+<view class="search_row">
+  <input type="text" model:value="{{inputValue}}" placeholder="请输入商品关键字" bindinput="handleInput" bindconfirm="handleConfirm" bindfocus="handleFocus"/>
+  <button hidden="{{!isFocus}}" bindtap="handleCancel" >取消</button>
+</view>
+<!-- 搜索栏结束 -->
+<!-- 展示搜索结果开始 -->
+<view class="search_content">
+  <navigator
+    class="search_item"
+    wx:for="{{productList}}"
+    wx:key="id"
+    url="/pages/product_detail/index?id={{item.id}}"
+  >{{item.name}}
+  </navigator>
+  </view>
+  <!-- 展示搜索结果结束 -->
+  <!-- 搜索记录开始 -->
+  <view class="history_box">
+  <view class="history_title"><text>搜索记录</text><text class="delete" bindtap="handleHistoryDelete">清除记录</text></view>
+  <view class="history_list">
+  <view class="history_list1" wx:for="{{historyList}}" wx:key="id">{{item}}</view>
+  </view>
+  </view>
+  <!-- 搜索记录结束 -->

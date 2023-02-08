@@ -1,0 +1,58 @@
+{
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+
+  
+  "pages":[
+    "pages/index/index",
+    "pages/category/index",
+    "pages/cart/index",
+    "pages/my/index",
+    "pages/search/index",
+    "pages/product_detail/index",
+    "pages/pay/index",
+    "pages/order/index"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#90CCFE",
+    "navigationBarTitleText": "晴川手机商城",
+    "navigationBarTextStyle":"white"
+  },
+  
+  "tabBar": {
+    "color": "#999",
+    "selectedColor": "#90CCFE",
+    "backgroundColor": "#fafafa",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "icons/_home.png",
+      "selectedIconPath": "icons/home.png"
+    },
+    {
+      "pagePath": "pages/category/index",
+      "text": "分类",
+      "iconPath": "icons/_category.png",
+      "selectedIconPath": "icons/category.png"
+    },
+    {
+      "pagePath": "pages/cart/index",
+      "text": "购物车",
+      "iconPath": "icons/_cart.png",
+      "selectedIconPath": "icons/cart.png"
+    },
+    {
+      "pagePath": "pages/my/index",
+      "text": "我的",
+      "iconPath": "icons/_my.png",
+      "selectedIconPath": "icons/my.png"
+    }
+  ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

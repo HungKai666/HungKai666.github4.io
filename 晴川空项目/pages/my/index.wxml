@@ -1,0 +1,120 @@
+<view class="user_info">
+  <!-- 用户背景信息开始 -->
+  <view class="user_info_bg">
+  <image mode="widthFix" src="/icons/bg.jpg">
+  <view  class="jifen"><view class="iconfont icon-icon_huangguan"></view>会员积分 0.00</view>
+    <view class="user_info_wrap">
+      <image src="{{userInfo.avatarUrl}}"></image>
+      <view class="user_name">{{userInfo.nickName}}</view>   
+    </view>
+  </image>
+  </view>
+  <!-- 用户背景信息结束 -->
+  <!-- 滚动区域开始 -->
+  <view class="notice_box">
+        <view class="notice">
+          <image src="/icons/gonggao.png"></image>
+        </view>
+
+        <view class="swiper_box">
+          <swiper 
+              vertical="true"
+              autoplay="true" 
+              circular="true"
+              interval="3000"
+              duration='300'
+              easing-function='easeInOutCubic'>
+            <block wx:for='{{msgList}}' wx:key='index'>
+                <swiper-item>
+                  <view class="swiper-item">
+                    <span class="newsp">最新</span>
+                    <text class="notice-title">{{item.title}}</text>
+                  </view>
+                </swiper-item>
+            </block>
+          </swiper>
+        </view> 
+      </view>
+
+  <!-- 滚动区域结束 -->
+
+  <!-- 用户操作菜单开始 -->
+  <view class="user_menu">
+    <!-- 订单管理开始 -->
+    <view class="order_wrap">
+      <view class="order_title">我的订单</view>
+      <view class="order_content">
+        <navigator url="/pages/order/index?type=1">
+          <view class="iconfont icon-icondaifukuan"></view>
+          <view class="order_name">待付款</view>
+        </navigator>
+        <navigator url="/pages/order/index?type=2">
+          <view class="iconfont icon-icondaishouhuo"></view>
+          <view class="order_name">待收货</view>
+        </navigator>
+        <navigator url="/pages/order/index?type=3">
+          <view class="iconfont icon-tuikuan"></view>
+          <view class="order_name">退款/退货</view>
+        </navigator>
+        <navigator url="/pages/order/index?type=0">
+          <view class="iconfont icon-iconquanbudingdan"></view>
+          <view class="order_name">全部订单</view>
+        </navigator>
+      </view>
+    </view>
+    <!-- 订单管理结束 -->
+  </view>   
+  <!-- 用户操作菜单结束 -->
+
+  <!-- 卡片开始 -->
+  <view class="user_menu2">
+<!-- 订单管理开始 -->
+<view class="order_wrap2">
+  <view class="order_title2">我的服务</view>
+  <view class="order_content2">
+    <view class="List1">
+      <view class="iconfont icon-kefu1"></view>
+      <view class="order_name">我的客服</view>
+      <button open-type="contact"></button>
+    </view>
+    <view class="List1">
+      <view class="iconfont icon-dizhi"></view>
+      <view class="order_name" bindtap="handleChooseAddress">管理地址</view>
+    </view>
+    <view class="List1">
+      <view class="iconfont icon-yijianfankui"></view>
+      <view class="order_name">意见反馈</view>
+      <button open-type="feedback"></button>
+    </view>
+    <view class="List1">
+      <view class="iconfont icon-anquanshezhi"></view>
+      <view class="order_name">设置</view>
+      <button open-type="openSetting"></button>
+    </view>
+    <view class="List1">
+      <view class="iconfont icon-fenxiang1"></view>
+      <view class="order_name">分享</view>
+      <button open-type="share"></button>
+    </view>
+      <view class="List1">
+      <view class="iconfont icon-qita"></view>
+      <view class="order_name">其他问题</view>
+      <button></button>
+    </view>
+      <view class="List1">
+      <view class="iconfont icon-huodong"></view>
+      <view class="order_name">我的活动</view>
+      <button></button>
+    </view>
+      <view class="List1">
+      <view class="iconfont icon-guanyuwomen"></view>
+      <view class="order_name">关于我们</view>
+      <button></button>
+    </view>
+  </view>
+</view>
+<!-- 订单管理结束 -->
+</view>   
+  <!-- 卡片结束 -->
+
+</view>

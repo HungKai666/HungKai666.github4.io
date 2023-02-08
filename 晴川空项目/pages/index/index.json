@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "SearchBar":"/components/SearchBar/SearchBar"
+  },
+  "navigationStyle": "custom", 
+  "navigationBarTitleText": "晴川手机商城-首页"
+}
